@@ -75,10 +75,12 @@
   ;; work with the Radiance GUI look and feel, and set up the resource
   ;; that allows runtime access to the build version information.
   :prep-tasks [["shell" "npm" "run" "local-docs"]
-               "javac"
+              ;; TODO: couldn't find npm but removing java helped - revisit after initial release
+              ;;  "javac"
                "compile"
                ["v" "cache" "resources/beat_link_trigger" "edn"]]
 
   ;; Miscellaneous sanitary settings
   :pedantic :warn
   :min-lein-version "2.0.0")
+
